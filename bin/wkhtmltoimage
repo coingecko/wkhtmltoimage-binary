@@ -1,10 +1,14 @@
 #!/usr/bin/env ruby
 
 arch = case RUBY_PLATFORM
+       when /aarch64.*linux/
+         'aarch64'
        when /64.*linux/
          'amd64'
        when /linux/
          'i386'
+       when /arm64.*darwin/
+         'darwin-x64'
        when /64.*darwin/
          'darwin-x64'
        when /darwin/
